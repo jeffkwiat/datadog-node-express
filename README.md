@@ -6,8 +6,8 @@ This repository demonstrates Datadog's monitoring prowess for a simple Node.JS a
 https://www.datadoghq.com/
 
 2) You have Docker / Docker Compose installed for containerization.  Here are some links to get installed:
-- *Docker*: https://www.docker.com/get-started
-- *Docker Compose*: https://docs.docker.com/compose/install/
+- **Docker**: https://www.docker.com/get-started
+- **Docker Compose**: https://docs.docker.com/compose/install/
 
 
 ## How to Install / Run
