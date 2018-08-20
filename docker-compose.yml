@@ -1,0 +1,15 @@
+version: '3'
+services:
+  agent:
+    image: datadog/agent
+    environment:
+      - DD_API_KEY=<YOUR_DD_API_KEY>
+      - DD_APM_ENABLED=true
+      - DD_LOGS_ENABLED=true
+      - DD_PROCESS_AGENT_ENABLED=true
+      - DD_HOSTNAME=app-web-app
+      - DD_LOG_LEVEL=debug
+  demo:
+    build: .
+    ports:
+      - 3000:3000
