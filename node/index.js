@@ -1,10 +1,13 @@
+// Additional tooling is needed https://datadog.github.io/dd-trace-js/#tracer-settings
 var config = require('./config');
 var debug = require('debug')('demo-app:server');
 var session = require('express-session');
 var RedisStore = require('connect-redis')(session);
 const tracer = require('dd-trace').init({ service: 'node-express', // shows up as Service in Datadog UI
                                         hostname: 'agent', // references the `agent` service in docker-compose.yml
-                                        debug: true }) // useful for seeing request/response and any logs
+                                        env: 'staging',
+                                        sampleRate: 1,
+                                        debug: true}) // useful for seeing request/response and any logs
 
 const express = require('express');
 const redis = require('redis');
