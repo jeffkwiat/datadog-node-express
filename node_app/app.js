@@ -6,7 +6,7 @@ var constants = require('constants');
 var constant = require('./config/constants');
 var debug = require('debug')('demo-app:server');
 
-var port = process.env.PORT || 8042;
+var port = process.env.PORT || 3000;
 var mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 var passport = require('passport');
@@ -77,7 +77,7 @@ app.set('view engine', 'ejs');
 //app.use(session({ secret: 'iloveyoudear...' })); // session secret
 
 app.use(session({
-    secret: 'I Love India...',
+    secret: 'So-many-secrets',
     resave: true,
     saveUninitialized: true
 }));
