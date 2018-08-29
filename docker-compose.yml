@@ -2,14 +2,48 @@ version: '3'
 services:
   agent:
     image: datadog/agent
+    container_name: datadog-demo
     environment:
-      - DD_API_KEY=<YOUR_DD_API_KEY>
+      - DD_API_KEY=1ed1eba742b84b49409e3a8e2885a779
       - DD_APM_ENABLED=true
       - DD_LOGS_ENABLED=true
       - DD_PROCESS_AGENT_ENABLED=true
-      - DD_HOSTNAME=app-web-app
+      - DD_HOSTNAME=node-web-app
       - DD_LOG_LEVEL=debug
-  demo:
-    build: .
+
+  mongo:
+    image: mongo:latest
     ports:
-      - 3000:3000
+      - "27017:27017"
+    container_name: demo-mongo
+    networks:
+      backend:
+        ipv4_address: 172.19.0.4
+
+  redis:
+    image: redis:4.0.10
+    ports:
+      - "6379:6379"
+    container_name: demo-redis
+    networks:
+      backend:
+        ipv4_address: 172.19.0.3
+
+  demo:
+    build:
+        context: .
+    ports:
+      - "3000:3000"
+    container_name: demo-app
+    networks:
+      frontend:
+      backend:
+        ipv4_address: 172.19.0.5
+
+networks:
+  frontend:
+  backend:
+    driver: bridge
+    ipam:
+     config:
+       - subnet: 172.19.0.0/16
