@@ -14,7 +14,7 @@ https://www.datadoghq.com/
 - Replace <YOUR_DD_API_KEY> with your Datadog API key, which can be located here:
 
 
-- Run `docker-compose up --build` 
+- Run `docker-compose up --build`
 - The docker and docker-compose files open port 3000 on your host machine.  To start sending traffic using:
 1) Open your browser to http://localhost/org/<any organization id>
 
@@ -22,3 +22,8 @@ https://www.datadoghq.com/
 
     `curl http://localhost:3000/org/[1-1000]`
 
+## New login/signin Pages
+
+Additional dependency being used for automatic [MVC framework generation](https://www.npmjs.com/package/express-mvc-generator).
+
+http://0.0.0.0:3000/login & http://0.0.0.0:3000/signup
