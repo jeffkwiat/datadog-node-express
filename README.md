@@ -1,4 +1,6 @@
 # datadog-node-express
+
+[![Git](https://app.soluble.cloud/api/v1/public/badges/6bde29a8-d6c8-43c7-ba2f-9cb650d91e47.svg?orgId=498499820349)](https://app.soluble.cloud/repos/details/github.com/jeffkwiat/datadog-node-express?orgId=498499820349)  
 This repository demonstrates Datadog's monitoring prowess for a simple Node.JS application.  Here we create a simple Node.js application with the Datadog agent installed for APM monitoring.
 
 ## Prerequisites
